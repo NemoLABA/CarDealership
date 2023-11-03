@@ -5,22 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de738748-e25e-4fb9-a888-7ee53772235c" name="Changes" comment="Testing commits, added package names and a Person class for better clarity.">
-      <change afterPath="$PROJECT_DIR$/src/payment/CreditCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/people/CarSalesman.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/people/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/people/FinancialOfficer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sales/salesperson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sales/vehicleSold.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vehicle/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vehicle/SUV.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vehicle/Sedan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vehicle/Van.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warranty/ExtendedWarranty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warranty/HighWarranty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warranty/LowWarranty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warranty/MediumWarranty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cardealership/CarDealership.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sales/Discount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vehicle/Electric.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vehicle/Gas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vehicle/Motorcycle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vehicle/StartVehicle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/people/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/people/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sales/salesperson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sales/SalesPerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sales/vehicleSold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sales/VehiclesSold.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vehicle/SUV.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vehicle/Sedan.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vehicle/Van.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warranty/HighWarranty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warranty/LowWarranty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warranty/MediumWarranty.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +30,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -54,7 +55,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -74,7 +76,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698732427868</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Testing commits, added package names and a Person class for better clarity.">
+      <option name="closed" value="true" />
+      <created>1698765976279</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698765976279</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
