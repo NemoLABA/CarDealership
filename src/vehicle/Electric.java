@@ -1,15 +1,33 @@
 package vehicle;
 
-public class Electric extends Car implements IVehicleMove {
+public final class Electric extends Car implements IVehicleMove {
+    private static final String VEHICLE_TYPE = "Electric"; // Final variable
+    private static int totalElectricVehicles; // Static variable
     private int batteryPower;    // In kWh
     private int motors;          // Number of motors
+    private final int batteryCapacity; // In kWh
 
-    public Electric(String make, String model, int year, String VIN, int batteryPower, int motors) {
+    // Static block
+    static {
+        totalElectricVehicles = 0;
+    }
+
+    public Electric(String make, String model, int year, String VIN, int batteryPower, int motors, int batteryCapacity) {
         super(make, model, year, VIN);
         this.batteryPower = batteryPower;
         this.motors = motors;
+        this.batteryCapacity = batteryCapacity;
+        totalElectricVehicles++; // Static variable
     }
 
+    // Static method
+    public static int getTotalElectricVehicles() {
+        return totalElectricVehicles;
+    }
+    //Final method
+    public final void chargeBattery() {
+        System.out.println("Charging battery...");
+    }
     public int getBatteryPower() {
         return batteryPower;
     }
@@ -26,9 +44,12 @@ public class Electric extends Car implements IVehicleMove {
         this.motors = motors;
     }
 
+    public int getBatteryCapacity() {
+        return batteryCapacity;
+    }
     @Override
     public String getType() {
-        return "Electric";
+        return VEHICLE_TYPE; // Uses the static final variable
     }
 
     @Override
@@ -39,5 +60,15 @@ public class Electric extends Car implements IVehicleMove {
     @Override
     public void startVehicle() {
         System.out.println("Starting electric car with " + getMotors() + " motors.");
+    }
+
+    @Override
+    public void stopVehicle() {
+        System.out.println("Electric car is stopping using regenerative braking");
+    }
+
+    @Override
+    public void accelerate(int rate) {
+        System.out.println("Electric car insanely keeps the same rate of " + rate + " km/h using instant torque.");
     }
 }

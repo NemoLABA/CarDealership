@@ -1,15 +1,18 @@
 package people;
+import java.util.Objects;
 
 public class Employee extends Person {
     private int employeeId;
     private String department;
 
-    protected Employee(Builder builder) {
-        super(builder.name, builder.address, builder.city);
-        this.employeeId = builder.employeeId;
-        this.department = builder.department;
+    // Constructor with all fields including those from the base class
+    public Employee(String name, String address, String city, int employeeId, String department) {
+        super(name, address, city); // Call to the base class constructor
+        this.employeeId = employeeId;
+        this.department = department;
     }
 
+    // Getters and setters for employeeId and department
     public int getEmployeeId() {
         return this.employeeId;
     }
@@ -26,29 +29,25 @@ public class Employee extends Person {
         this.department = department;
     }
 
-    public static class Builder {
-        private String name;
-        private String address;
-        private String city;
-        private int employeeId;
-        private String department;
+    // Optional: Override the toString method if you want to include Employee-specific details
+    @Override
+    public String toString() {
+        return super.toString() + "\nEmployee ID: " + this.employeeId + "\nDepartment: " + this.department;
+    }
 
-        public Builder(String name) {
-            this.name = name;
-        }
+    // You may also override hashCode and equals if you want to include Employee-specific fields in the comparison
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), employeeId, department);
+    }
 
-        public Builder employeeId(int employeeId) {
-            this.employeeId = employeeId;
-            return this;
-        }
-
-        public Builder department(String department) {
-            this.department = department;
-            return this;
-        }
-
-        public Employee build() {
-            return new Employee(this);
-        }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Employee)) return false;
+        if (!super.equals(o)) return false;
+        Employee employee = (Employee) o;
+        return employeeId == employee.employeeId &&
+                Objects.equals(department, employee.department);
     }
 }

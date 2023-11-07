@@ -1,12 +1,37 @@
 package vehicle;
 
-public class Motorcycle extends Car implements IVehicleMove {
-    private String engine;  // Ex: 500cc
-    private final int wheels = 2;
+public final class Motorcycle extends Car implements IVehicleMove {
+    private static final String VEHICLE_TYPE = "Motorcycle"; // Final variable
+    private static int totalMotorcycles; // Static variable
 
-    public Motorcycle(String make, String model, int year, String VIN, String engine) {
+    private String engine;               // Ex: 500cc
+    private final int wheels = 2;        // Already a final variable
+    private final boolean hasABS;        // New final variable for safety feature
+
+    // Static block
+    static {
+        totalMotorcycles = 0;
+    }
+
+    public Motorcycle(String make, String model, int year, String VIN, String engine, boolean hasABS) {
         super(make, model, year, VIN);
         this.engine = engine;
+        this.hasABS = hasABS; // Initialize final variable
+        totalMotorcycles++; // Increment the number of motorcycles every time a new instance is created
+    }
+
+    // Static method
+    public static int getTotalMotorcycles() {
+        return totalMotorcycles;
+    }
+
+    // Modified final method for demonstration
+    public final void performSafetyCheck() {
+        if (hasABS) {
+            System.out.println("Safety check passed: ABS is installed.");
+        } else {
+            System.out.println("Safety check warning: ABS is not installed.");
+        }
     }
 
     public String getEngine() {
@@ -18,12 +43,12 @@ public class Motorcycle extends Car implements IVehicleMove {
     }
 
     public int getWheels() {
-        return wheels;
+        return wheels; // No setter since `wheels` is final and cannot be changed
     }
 
     @Override
     public String getType() {
-        return "Motorcycle";
+        return VEHICLE_TYPE; // Using the static final variable
     }
 
     @Override
@@ -34,5 +59,15 @@ public class Motorcycle extends Car implements IVehicleMove {
     @Override
     public void startVehicle() {
         System.out.println("Starting motorcycle with " + getEngine() + " engine.");
+    }
+
+    @Override
+    public void stopVehicle() {
+        System.out.println("Motorcycle is stopping using front and rear brake pads.");
+    }
+
+    @Override
+    public void accelerate(int rate) {
+        System.out.println("Gas cylinder engine accelerates at a rate of " + rate + " km/h, feeling the wind rush by.");
     }
 }

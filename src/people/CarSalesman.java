@@ -1,11 +1,9 @@
 package people;
-
 import java.util.Objects;
 
 public class CarSalesman extends Employee {
-
-    public CarSalesman (Builder builder) {
-        super(builder);
+    public CarSalesman(String name, String address, String city, int employeeId, String department) {
+        super(name, address, city, employeeId, department);
     }
 
     @Override
@@ -24,14 +22,15 @@ public class CarSalesman extends Employee {
         return Objects.hash(getName(), getAddress(), getCity(), getEmployeeId(), getDepartment());
     }
 
-    public static class Builder extends Employee.Builder {
-        public Builder(String name) {
-            super(name);
-        }
-
-        @Override
-        public CarSalesman build() {
-            return new CarSalesman(this);
-        }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        FinancialOfficer that = (FinancialOfficer) obj;
+        return getEmployeeId() == that.getEmployeeId() &&
+                Objects.equals(getName(), that.getName()) &&
+                Objects.equals(getAddress(), that.getAddress()) &&
+                Objects.equals(getCity(), that.getCity()) &&
+                Objects.equals(getDepartment(), that.getDepartment());
     }
 }

@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de738748-e25e-4fb9-a888-7ee53772235c" name="Changes" comment="Testing commits, added package names and a Person class for better clarity.">
-      <change afterPath="$PROJECT_DIR$/src/sales/IWarranty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sales/WarrantyType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sales/Discount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/people/CarSalesman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/people/CarSalesman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/people/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/people/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/people/FinancialOfficer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/people/FinancialOfficer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sales/SalesPerson.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vehicle/Electric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vehicle/Electric.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vehicle/Gas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vehicle/Gas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vehicle/Motorcycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vehicle/Motorcycle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vehicle/StartVehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vehicle/IVehicleMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warranty/ExtendedWarranty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sales/ExtendedWarranty.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +85,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698995792577</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Testing commits, added package names and a Person class for better clarity.">
+      <option name="closed" value="true" />
+      <created>1699366316129</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699366316129</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
