@@ -1,6 +1,6 @@
 package vehicle;
 
-public class Electric extends Car implements StartVehicle {
+public class Electric extends Car implements IVehicleMove {
     private int batteryPower;    // In kWh
     private int motors;          // Number of motors
 

@@ -1,4 +1,4 @@
-package warranty;
+package sales;
 
 public abstract class ExtendedWarranty {
     protected int coverageMiles;

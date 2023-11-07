@@ -1,6 +1,6 @@
 package vehicle;
 
-public class Gas extends Car implements StartVehicle {
+public class Gas extends Car implements IVehicleMove {
     private String engine;  // Ex: 5.4L
     private String drive;   // Ex: FWD, RWD, AWD
 

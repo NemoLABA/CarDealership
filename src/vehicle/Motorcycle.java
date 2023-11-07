@@ -1,6 +1,6 @@
 package vehicle;
 
-public class Motorcycle extends Car implements StartVehicle {
+public class Motorcycle extends Car implements IVehicleMove {
     private String engine;  // Ex: 500cc
     private final int wheels = 2;
 
