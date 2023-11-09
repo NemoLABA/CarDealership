@@ -1,12 +1,17 @@
 package people;
 
+import exceptions.InvalidNameException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Objects;
 
 public class Customer extends Person {
+    private static final Logger logger = LogManager.getLogger(Customer.class);
     private String phoneNumber;
     private int vehiclesPurchased;
 
-    public Customer(String name, String address, String city, String phoneNumber) {
+    public Customer(String name, String address, String city, String phoneNumber) throws InvalidNameException {
         super(name, address, city);
         this.phoneNumber = phoneNumber;
         this.vehiclesPurchased = 0;

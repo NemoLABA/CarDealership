@@ -1,13 +1,18 @@
 package people;
+import exceptions.InvalidNameException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Objects;
 
 public abstract class Person {
+    private static final Logger logger = LogManager.getLogger(Person.class);
     private String name;
     private String address;
     private String city;
 
-    public Person(String name, String address, String city) {
-        this.name = name;
+    public Person(String name, String address, String city) throws InvalidNameException {
+        this.setName(name);
         this.address = address;
         this.city = city;
     }
@@ -16,7 +21,12 @@ public abstract class Person {
         return this.name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) throws InvalidNameException {
+        if (name == null || name.length() < 5 || name.length() > 30 || !name.contains(" ")) {
+            logger.error("Not within Parameters", name);
+            throw new InvalidNameException("Name is invalid");
+        }
+        logger.info("Success, Welcome: {}", name);
         this.name = name;
     }
 

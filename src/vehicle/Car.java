@@ -1,8 +1,12 @@
 package vehicle;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Random;
 
 public abstract class Car {
+    private static final Logger logger = LogManager.getLogger(Car.class);
     private String make;
     private String model;
     private int year;

@@ -1,6 +1,10 @@
 package vehicle;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public final class Motorcycle extends Car implements IVehicleMove {
+    private static final Logger logger = LogManager.getLogger(Motorcycle.class);
     private static final String VEHICLE_TYPE = "Motorcycle"; // Final variable
     private static int totalMotorcycles; // Static variable
 

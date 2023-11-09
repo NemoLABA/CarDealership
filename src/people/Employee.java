@@ -1,5 +1,7 @@
 package people;
 
+import exceptions.InvalidNameException;
+
 import java.util.Objects;
 
 public class Employee extends Person {
@@ -7,7 +9,7 @@ public class Employee extends Person {
     private int employeeId;
     private String department;
 
-    public Employee(String name, String address, String city, int employeeId, String department) {
+    public Employee(String name, String address, String city, int employeeId, String department) throws InvalidNameException {
         super(name, address, city);
         this.employeeId = employeeId;
         this.department = department;

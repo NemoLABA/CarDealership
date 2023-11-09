@@ -1,5 +1,7 @@
 package cardealership;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import people.CarSalesman;
 import people.Customer;
 import people.Employee;
@@ -11,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CarDealership {
+    private static final Logger logger = LogManager.getLogger(CarDealership.class);
     private List<Gas> gasCars = new ArrayList<>();
     private List<Electric> electricCars = new ArrayList<>();
     private List<Motorcycle> motorcycles = new ArrayList<>();

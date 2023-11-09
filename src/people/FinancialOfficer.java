@@ -1,13 +1,18 @@
 package people;
 
+import exceptions.InvalidNameException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.List;
 import java.util.Objects;
 
 public final class FinancialOfficer extends Employee {
+    private static final Logger logger = LogManager.getLogger(FinancialOfficer.class);
     private int lifetimeLoans;
     private List<String> certifications;
 
-    public FinancialOfficer(String name, String address, String city, int employeeId, String department, int lifetimeLoans, List<String> certifications) {
+    public FinancialOfficer(String name, String address, String city, int employeeId, String department, int lifetimeLoans, List<String> certifications) throws InvalidNameException {
         super(name, address, city, employeeId, department);
         this.lifetimeLoans = lifetimeLoans;
         this.certifications = certifications;

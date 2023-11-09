@@ -1,4 +1,7 @@
 import cardealership.CarDealership;
+import exceptions.InvalidNameException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import people.CarSalesman;
 import people.Customer;
 import vehicle.Electric;
@@ -6,8 +9,10 @@ import vehicle.Gas;
 import vehicle.Motorcycle;
 import java.util.List;
 
+
 public class Main {
-    public static void main(String[] args) {
+    private static final Logger logger = LogManager.getLogger(Main.class);
+    public static void main(String[] args) throws InvalidNameException {
         CarDealership dealership = new CarDealership();
 
         Gas gasCar = new Gas("Chevrolet", "Spark", 2019, "1G1FF1R70K0145678", "V6", "AWD", "Standard", 15000);
