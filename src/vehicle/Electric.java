@@ -12,8 +12,8 @@ public final class Electric extends Car implements IVehicleMove {
         totalElectricVehicles = 0;
     }
 
-    public Electric(String make, String model, int year, String VIN, int batteryPower, int motors, int batteryCapacity) {
-        super(make, model, year, VIN);
+    public Electric(String make, String model, int year, String VIN, int batteryPower, int motors, int batteryCapacity, double price) {
+        super(make, model, year, VIN, price);
         this.batteryPower = batteryPower;
         this.motors = motors;
         this.batteryCapacity = batteryCapacity;
@@ -49,7 +49,7 @@ public final class Electric extends Car implements IVehicleMove {
     }
     @Override
     public String getType() {
-        return VEHICLE_TYPE; // Uses the static final variable
+        return VEHICLE_TYPE; // Using the static final variable
     }
 
     @Override

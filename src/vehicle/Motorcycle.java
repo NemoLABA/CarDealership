@@ -13,11 +13,11 @@ public final class Motorcycle extends Car implements IVehicleMove {
         totalMotorcycles = 0;
     }
 
-    public Motorcycle(String make, String model, int year, String VIN, String engine, boolean hasABS) {
-        super(make, model, year, VIN);
+    public Motorcycle(String make, String model, int year, String VIN, String engine, boolean hasABS, double price) {
+        super(make, model, year, VIN, price);
         this.engine = engine;
         this.hasABS = hasABS; // Initialize final variable
-        totalMotorcycles++; // Increment the number of motorcycles every time a new instance is created
+        totalMotorcycles++;
     }
 
     // Static method
@@ -25,7 +25,7 @@ public final class Motorcycle extends Car implements IVehicleMove {
         return totalMotorcycles;
     }
 
-    // Modified final method for demonstration
+    // Final method
     public final void performSafetyCheck() {
         if (hasABS) {
             System.out.println("Safety check passed: ABS is installed.");
@@ -43,7 +43,7 @@ public final class Motorcycle extends Car implements IVehicleMove {
     }
 
     public int getWheels() {
-        return wheels; // No setter since `wheels` is final and cannot be changed
+        return wheels; // No setter since `wheels` is final
     }
 
     @Override

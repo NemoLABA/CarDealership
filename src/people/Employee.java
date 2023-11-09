@@ -1,18 +1,18 @@
 package people;
+
 import java.util.Objects;
 
 public class Employee extends Person {
+
     private int employeeId;
     private String department;
 
-    // Constructor with all fields including those from the base class
     public Employee(String name, String address, String city, int employeeId, String department) {
-        super(name, address, city); // Call to the base class constructor
+        super(name, address, city);
         this.employeeId = employeeId;
         this.department = department;
     }
 
-    // Getters and setters for employeeId and department
     public int getEmployeeId() {
         return this.employeeId;
     }
@@ -29,13 +29,11 @@ public class Employee extends Person {
         this.department = department;
     }
 
-    // Optional: Override the toString method if you want to include Employee-specific details
     @Override
     public String toString() {
         return super.toString() + "\nEmployee ID: " + this.employeeId + "\nDepartment: " + this.department;
     }
 
-    // You may also override hashCode and equals if you want to include Employee-specific fields in the comparison
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), employeeId, department);

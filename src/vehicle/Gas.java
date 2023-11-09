@@ -1,10 +1,10 @@
 package vehicle;
 
 public final class Gas extends Car implements IVehicleMove {
+
     private static final String VEHICLE_TYPE = "Gas"; // Final variable
     private static int totalGasVehicles; // Static variable
-
-    private final String engineType;     // Final variable for demonstration
+    private final String engineType;     // Final variable
     private String engine;               // Ex: 5.4L
     private String drive;                // Ex: FWD, RWD, AWD
 
@@ -13,12 +13,12 @@ public final class Gas extends Car implements IVehicleMove {
         totalGasVehicles = 0;
     }
 
-    public Gas(String make, String model, int year, String VIN, String engine, String drive, String engineType) {
-        super(make, model, year, VIN);
+    public Gas(String make, String model, int year, String VIN, String engine, String drive, String engineType, double price) {
+        super(make, model, year, VIN, price);
         this.engine = engine;
         this.drive = drive;
-        this.engineType = engineType; // Initialize final variable
-        totalGasVehicles++; // Increment the number of gas vehicles every time a new instance is created
+        this.engineType = engineType;
+        totalGasVehicles++;
     }
 
     // Static method
@@ -26,7 +26,7 @@ public final class Gas extends Car implements IVehicleMove {
         return totalGasVehicles;
     }
 
-    // Final method for demonstration
+    // Final method
     public final void performEmissionTest() {
         System.out.println("Performing emission test for the gas car with engine type " + engineType + ".");
     }

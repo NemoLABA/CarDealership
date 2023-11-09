@@ -36,8 +36,6 @@ public abstract class Person {
         this.city = city;
     }
 
-
-
     @Override
     public String toString() {
         return this.name + "\n  " + this.address + " " + this.city;

@@ -1,49 +1,29 @@
 package payment;
 
+import java.security.SecureRandom;
+
 public class CreditCard {
+
     private String cardNumber;
     private String cardHolderName;
     private String expirationDate;
-    private String CVV;
+    private final String CVV;
 
-    public CreditCard(String cardNumber, String cardHolderName, String expirationDate, String CVV) {
+    public CreditCard(String cardNumber, String cardHolderName, String expirationDate) {
         this.cardNumber = cardNumber;
         this.cardHolderName = cardHolderName;
         this.expirationDate = expirationDate;
-        this.CVV = CVV;
+        this.CVV = generateRandomCVV();
     }
 
-
-    public String getCardNumber() {
-        return cardNumber;
-    }
-
-    public void setCardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
-    }
-
-    public String getCardHolderName() {
-        return cardHolderName;
-    }
-
-    public void setCardHolderName(String cardHolderName) {
-        this.cardHolderName = cardHolderName;
-    }
-
-    public String getExpirationDate() {
-        return expirationDate;
-    }
-
-    public void setExpirationDate(String expirationDate) {
-        this.expirationDate = expirationDate;
+    private String generateRandomCVV() {
+        SecureRandom random = new SecureRandom();
+        int cvvNumber = random.nextInt(900) + 100; // makes sure CVV is 3 digits
+        return String.format("%03d", cvvNumber); // ensures leading zeros are included
     }
 
     public String getCVV() {
         return CVV;
-    }
-
-    public void setCVV(String CVV) {
-        this.CVV = CVV;
     }
 
     @Override
