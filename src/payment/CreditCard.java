@@ -7,7 +7,7 @@ import java.security.SecureRandom;
 
 public class CreditCard {
 
-    private static final Logger logger = LogManager.getLogger(CreditCard.class);
+    private static final Logger LOGGER = LogManager.getLogger(CreditCard.class);
 
     private String cardNumber;
     private String cardHolderName;

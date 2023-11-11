@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public final class CarSalesman extends Employee {
 
-    private static final Logger logger = LogManager.getLogger(CarSalesman.class);
+    private static final Logger LOGGER = LogManager.getLogger(CarSalesman.class);
 
     private double lifetimeSales;
     private double customerSatisfactionRating;

@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 public final class Gas extends Car implements IVehicleMove {
 
-    private static final Logger logger = LogManager.getLogger(Gas.class);
+    private static final Logger LOGGER = LogManager.getLogger(Gas.class);
 
     private static final String VEHICLE_TYPE = "Gas"; // Final variable
     private static int totalGasVehicles; // Static variable

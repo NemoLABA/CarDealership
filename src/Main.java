@@ -12,7 +12,7 @@ import java.util.List;
 
 
 public class Main {
-    private static final Logger logger = LogManager.getLogger(Main.class);
+    private static final Logger LOGGER = LogManager.getLogger(Main.class);
     public static void main(String[] args) {
         CarDealership dealership = new CarDealership();
 
@@ -32,13 +32,13 @@ public class Main {
         try {
             salesman = new CarSalesman("Tabitha Jones", "8050 Lee St", "Uptown", 183, "Sales", 120000.0, 5.0);
         } catch (InvalidNameException e) {
-            logger.error("Invalid salesman name: " + e.getMessage());
+            LOGGER.error("Invalid salesman name: " + e.getMessage());
         }
 
         try {
             customer = new Customer("Reese Witherspoon", "1940 East Idaho", "Fairfield", "123-456-7890");
         } catch (InvalidNameException e) {
-            logger.error("Invalid customer name: " + e.getMessage());
+            LOGGER.error("Invalid customer name: " + e.getMessage());
         }
 
         // Perform a vehicle sale

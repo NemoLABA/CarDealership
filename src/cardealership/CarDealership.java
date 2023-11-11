@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 public class CarDealership {
 
-    private static final Logger logger = LogManager.getLogger(CarDealership.class);
+    private static final Logger LOGGER = LogManager.getLogger(CarDealership.class);
 
     private List<Car> allVehicles = new ArrayList<>();
     private List<Car> vehiclesSold = new ArrayList<>();
@@ -42,9 +42,9 @@ public class CarDealership {
             customer.incrementVehiclesPurchased();
             salesman.incrementLifetimeSales(salePrice);
 
-            logger.info("Congratulations, the vehicle is yours!");
-            logger.info("Salesman's lifetime sales: " + salesman.getLifetimeSales());
-            logger.info("Customer's vehicles purchased: " + customer.getVehiclesPurchased());
+            LOGGER.info("Congratulations, the vehicle is yours!");
+            LOGGER.info("Salesman's lifetime sales: " + salesman.getLifetimeSales());
+            LOGGER.info("Customer's vehicles purchased: " + customer.getVehiclesPurchased());
 
             return true;
         } else {
@@ -55,7 +55,7 @@ public class CarDealership {
 
     public void printSaleStatus(boolean saleStatus, CarSalesman salesman, Customer customer) {
         if (!saleStatus) {
-            logger.error("Vehicle not in stock, sale not completed.");
+            LOGGER.error("Vehicle not in stock, sale not completed.");
         }
     }
 

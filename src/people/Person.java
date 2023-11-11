@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public abstract class Person {
 
-    private static final Logger logger = LogManager.getLogger(Person.class);
+    private static final Logger LOGGER = LogManager.getLogger(Person.class);
 
     private String name;
     private String address;
@@ -25,10 +25,10 @@ public abstract class Person {
 
     public void setName(String name) throws InvalidNameException {
         if (name == null || name.length() < 5 || name.length() > 30 || !name.contains(" ")) {
-            logger.error("Not within Parameters", name);
+            LOGGER.error("Not within Parameters", name);
             throw new InvalidNameException("Name is invalid");
         }
-        logger.info("Success, Welcome: {}", name);
+        LOGGER.info("Success, Welcome: {}", name);
         this.name = name;
     }
 

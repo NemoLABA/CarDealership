@@ -7,7 +7,7 @@ import java.util.Random;
 
 public abstract class Car {
 
-    private static final Logger logger = LogManager.getLogger(Car.class);
+    private static final Logger LOGGER = LogManager.getLogger(Car.class);
 
     private String make;
     private String model;

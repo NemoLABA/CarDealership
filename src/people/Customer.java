@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class Customer extends Person {
 
-    private static final Logger logger = LogManager.getLogger(Customer.class);
+    private static final Logger LOGGER = LogManager.getLogger(Customer.class);
 
     private String phoneNumber;
     private int vehiclesPurchased;
