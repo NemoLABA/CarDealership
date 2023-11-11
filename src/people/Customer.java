@@ -1,6 +1,7 @@
 package people;
 
 import exceptions.InvalidNameException;
+import exceptions.InvalidPhoneNumberException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,7 +24,10 @@ public class Customer extends Person {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) throws InvalidPhoneNumberException {
+        if (!phoneNumber.matches("\\d{3}-\\d{3}-\\d{4}")) {
+            throw new InvalidPhoneNumberException("Phone number must be in the format xxx-xxx-xxxx");
+        }
         this.phoneNumber = phoneNumber;
     }
 

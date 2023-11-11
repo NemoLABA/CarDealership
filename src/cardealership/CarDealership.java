@@ -1,5 +1,7 @@
 package cardealership;
 
+import exceptions.InvalidEmployeeException;
+import exceptions.InvalidVehicleException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import people.CarSalesman;
@@ -34,8 +36,9 @@ public class CarDealership {
         customers.add(customer);
     }
 
-    public boolean sellVehicle(CarSalesman salesman, Customer customer, Car vehicle, double salePrice) {
+    public boolean sellVehicle(CarSalesman salesman, Customer customer, Car vehicle, double salePrice) throws InvalidVehicleException {
         if (allVehicles.contains(vehicle)) {
+            // Proceed with the sale
             allVehicles.remove(vehicle);
             vehiclesSold.add(vehicle);
 
@@ -45,18 +48,45 @@ public class CarDealership {
             LOGGER.info("Congratulations, the vehicle is yours!");
             LOGGER.info("Salesman's lifetime sales: " + salesman.getLifetimeSales());
             LOGGER.info("Customer's vehicles purchased: " + customer.getVehiclesPurchased());
-
             return true;
         } else {
-            printSaleStatus(false, salesman, customer);  // Call printSaleStatus for failure
+            // If sale fails
+            try {
+                printSaleStatus(false, salesman, customer, vehicle);
+            } catch (InvalidVehicleException e) {
+                LOGGER.error("Sale failed: " + e.getMessage());
+            }
             return false;
         }
     }
 
-    public void printSaleStatus(boolean saleStatus, CarSalesman salesman, Customer customer) {
-        if (!saleStatus) {
-            LOGGER.error("Vehicle not in stock, sale not completed.");
+    public void printSaleStatus(boolean saleStatus, CarSalesman salesman, Customer customer, Car vehicle) throws InvalidVehicleException {
+        if (saleStatus) {
+            // Sale successful
+            LOGGER.info("Sale successful for salesman " + salesman.getName() + " and customer " + customer.getName());
+        } else {
+            // Check if the failure is due to vehicle not being in stock
+            if (!checkForVehicle(vehicle)) {
+                LOGGER.error("Vehicle not in stock, sale not completed for salesman " + salesman.getName() + " and customer " + customer.getName());
+                throw new InvalidVehicleException("Vehicle not in stock");
+            } else {
+                // Sale failed due to other reasons
+                LOGGER.error("Sale failed for salesman " + salesman.getName() + " and customer " + customer.getName());
+            }
         }
+    }
+
+    public void validateEmployee(int employeeId) throws InvalidEmployeeException {
+        boolean employeeExists = employees.stream()
+                .anyMatch(e -> e.getEmployeeId() == employeeId);
+        if (!employeeExists) {
+            LOGGER.error("Logger.Error: employee not found by ID: " + employeeId);
+            throw new InvalidEmployeeException("Employee not found by ID: " + employeeId);
+        }
+    }
+
+    public boolean checkForVehicle(Car vehicle) {
+        return allVehicles.contains(vehicle);
     }
 
     public List<Car> getGasCars() {

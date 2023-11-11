@@ -1,5 +1,6 @@
 package people;
 
+import exceptions.InvalidDepartmentException;
 import exceptions.InvalidNameException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,7 +15,7 @@ public final class FinancialOfficer extends Employee {
     private int lifetimeLoans;
     private List<String> certifications;
 
-    public FinancialOfficer(String name, String address, String city, int employeeId, String department, int lifetimeLoans, List<String> certifications) throws InvalidNameException {
+    public FinancialOfficer(String name, String address, String city, int employeeId, String department, int lifetimeLoans, List<String> certifications) throws InvalidNameException, InvalidDepartmentException {
         super(name, address, city, employeeId, department);
         this.lifetimeLoans = lifetimeLoans;
         this.certifications = certifications;
