@@ -6,7 +6,9 @@ import org.apache.logging.log4j.Logger;
 import java.util.Objects;
 
 public abstract class Person {
+
     private static final Logger logger = LogManager.getLogger(Person.class);
+
     private String name;
     private String address;
     private String city;

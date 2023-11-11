@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import people.CarSalesman;
 import people.Customer;
+import vehicle.Car;
 import vehicle.Electric;
 import vehicle.Gas;
 import vehicle.Motorcycle;
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class Main {
     private static final Logger logger = LogManager.getLogger(Main.class);
-    public static void main(String[] args) throws InvalidNameException {
+    public static void main(String[] args) {
         CarDealership dealership = new CarDealership();
 
         Gas gasCar = new Gas("Chevrolet", "Spark", 2019, "1G1FF1R70K0145678", "V6", "AWD", "Standard", 15000);
@@ -24,11 +25,21 @@ public class Main {
         dealership.addVehicle(electricCar);
         dealership.addVehicle(motorcycle);
 
-        // Creating a salesman
-        CarSalesman salesman = new CarSalesman("Tabitha Jones", "8050 Lee St", "Uptown", 183, "Sales", 120000.0, 5.0);
+        // Creating a customer and salesman
+        CarSalesman salesman = null;
+        Customer customer = null;
 
-        // Creating a customer
-        Customer customer = new Customer("Reese Witherspoon", "1940 East Idaho", "Fairfield", "123-456-7890");
+        try {
+            salesman = new CarSalesman("Tabitha Jones", "8050 Lee St", "Uptown", 183, "Sales", 120000.0, 5.0);
+        } catch (InvalidNameException e) {
+            logger.error("Invalid salesman name: " + e.getMessage());
+        }
+
+        try {
+            customer = new Customer("Reese Witherspoon", "1940 East Idaho", "Fairfield", "123-456-7890");
+        } catch (InvalidNameException e) {
+            logger.error("Invalid customer name: " + e.getMessage());
+        }
 
         // Perform a vehicle sale
         boolean saleStatus = dealership.sellVehicle(salesman, customer, motorcycle, 10000);
@@ -37,9 +48,9 @@ public class Main {
         dealership.printSaleStatus(saleStatus, salesman, customer);
 
         // Retrieving the specific lists
-        List<Gas> gasCars = dealership.getGasCars();
-        List<Electric> electricCars = dealership.getElectricCars();
-        List<Motorcycle> motorcycles = dealership.getMotorcycles();
+        List<Car> gasCars = dealership.getGasCars();
+        List<Car> electricCars = dealership.getElectricCars();
+        List<Car> motorcycles = dealership.getMotorcycles();
 
         // Printing out the total number of vehicles
         System.out.println("Dealer's Inventory:");

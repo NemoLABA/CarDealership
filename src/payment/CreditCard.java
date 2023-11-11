@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import java.security.SecureRandom;
 
 public class CreditCard {
+
     private static final Logger logger = LogManager.getLogger(CreditCard.class);
 
     private String cardNumber;

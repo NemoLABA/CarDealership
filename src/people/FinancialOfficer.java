@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Objects;
 
 public final class FinancialOfficer extends Employee {
+
     private static final Logger logger = LogManager.getLogger(FinancialOfficer.class);
+
     private int lifetimeLoans;
     private List<String> certifications;
 
