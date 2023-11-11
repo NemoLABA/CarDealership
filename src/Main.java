@@ -64,9 +64,9 @@ public class Main {
         List<Car> motorcycles = dealership.getMotorcycles();
 
         // Printing out the total number of vehicles
-        System.out.println("Dealer's Inventory:");
-        System.out.println("Total gas cars: " + gasCars.size());
-        System.out.println("Total electric cars: " + electricCars.size());
-        System.out.println("Total motorcycles: " + motorcycles.size());
+        LOGGER.info("Dealer's Inventory:");
+        LOGGER.info("Total gas cars: {}", gasCars.size());
+        LOGGER.info("Total electric cars: {}", electricCars.size());
+        LOGGER.info("Total motorcycles: {}", motorcycles.size());
     }
 }
